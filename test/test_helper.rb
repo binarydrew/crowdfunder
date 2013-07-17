@@ -21,4 +21,4 @@ class ActionDispatch::IntegrationTest
 
   # Crowdfunder is to be changed to the name of your app
   Capybara.app = Crowdfunder::Application
-end
+endra
