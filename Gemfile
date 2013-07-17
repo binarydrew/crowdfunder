@@ -33,7 +33,7 @@ group :doc do
 end
 
 group :tool do 
-	gem 'guard-test'
+	gem 'guard-minitest'
 end
 
 group :development do

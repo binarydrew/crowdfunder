@@ -13,7 +13,7 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     assert_equal projects_path, current_path
 
     # Assert this page has the words 'Listing Projects'
-    assert page.has_content?('Listing projects')
+    assert page.has_content?('Listing Projects')
 
     # Assert this page has these words as well
     assert page.has_content?('Project 1')
