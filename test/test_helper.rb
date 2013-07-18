@@ -15,12 +15,16 @@ class ActiveSupport::TestCase
 
 
 
-class ActionDispatch::IntegrationTest
-  # Make the Capybara DSL available in all integration tests
-  include Capybara::DSL
+  class ActionDispatch::IntegrationTest
+    # Make the Capybara DSL available in all integration tests
+    include Capybara::DSL
 
-  # Crowdfunder is to be changed to the name of your app
-  Capybara.app = Crowdfunder::Application
-end
+    # Crowdfunder is to be changed to the name of your app
+    Capybara.app = Crowdfunder::Application
+  end
+  teardown do
+    Capybara.reset_sessions!    # Forget the (simulated) browser state
+    Capybara.use_default_driver # Revert Capybara.current_driver to Capybara.default_driver
+  end
 
 end
