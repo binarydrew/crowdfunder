@@ -18,6 +18,6 @@
 
 <h1>Listing Projects</h1>
 <% @projects.each do |project| %>
-	<p> <%= project[:title] %></p>
+	<h3> <%= link_to project.title, project %> </h3>
 <% end %>
 
