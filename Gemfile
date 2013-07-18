@@ -46,9 +46,9 @@ group :test do
 	gem 'capybara'	
 end
 
-group :assets do
+
 	gem 'bootstrap-sass', '~> 2.2.2.0'
-end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
