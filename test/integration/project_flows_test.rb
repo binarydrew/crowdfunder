@@ -41,9 +41,7 @@ class ProjectFlowsTest < ActionDispatch::IntegrationTest
     find('.navbar ul').click_link('Projects')
     # Assert the page we're on is the projects page
     assert_equal projects_path, current_path
-    # Assert the projects nav element is active
-    assert_equal "Projects", find('.navbar ul li.active a').text
     click_link 'Project 1'
-    assert_equal "Projects", find('.navbar ul li.active a').textgi
+    assert_equal "Projects", find('.navbar ul li.active a').text
   end
 end
