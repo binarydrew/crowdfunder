@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	# login is a Sorcery method
+  	
     @user = login(params[:email], params[:password])
     if @user
       redirect_to :root, :notice => "Welcome back"
@@ -13,8 +13,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy
-  	# Sorcery method
+  def destroy  	
     logout
     redirect_to :root, notice: "Bye... Hope to see you later!"
   end

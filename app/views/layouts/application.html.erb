@@ -19,17 +19,12 @@
           <li class="<%= 'active' if @nav == :projects %>">
             <%= link_to 'Projects', :projects %>
           </li>
-          <% if logged_in? %>
-            <li class="divider-vertical"></li>
-            <li class="<%= 'active' if @nav == :my_projects %>">
-              <%= link_to 'My Projects', [:my, :projects] %>
-            <li>
-          <% end %>
+         
         </ul>
       </div>
       <div class="pull-right">
         <% if logged_in? %>
-          <%= link_to 'Logout', :session, :method => :delete, class: 'btn' %>
+          <%= link_to 'Logout', :sessions, :method => :delete, class: 'btn' %>
         <% else %>
           <%= link_to 'Sign Up', [:new, :user], class: 'btn btn-primary' %>
           <%= link_to 'Sign In', [:new, :session], class: 'btn btn-success' %>
@@ -38,6 +33,12 @@
     </div>
   </div>
 </div>
+
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+      <% elsif flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+  <% end %>
 
 <%= yield %>
 
