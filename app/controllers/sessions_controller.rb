@@ -2,8 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def create
-  	
+  def create  	
     @user = login(params[:email], params[:password])
     if @user
       redirect_to :root, :notice => "Welcome back"
@@ -17,4 +16,6 @@ class SessionsController < ApplicationController
     logout
     redirect_to :root, notice: "Bye... Hope to see you later!"
   end
+
+
 end
